@@ -1,0 +1,45 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+*.vs
+
+build\debug\*
+build\release\*
+build\dir\*
+build\*.off
+build\*.json\mesh_polyhedral_domain_with_surface_inside.dir\*
+build\mesh_polyhedral_domain_with_surface_inside.dir\Release\*
+build\dir\mesh_polyhedral_domain_with_surface_inside.dir\Debug\*
+build\mesh_polyhedral_domain_with_surface_inside.dir\Release\*.lo
+mesh_polyhedral_domain_with_surface_inside.dir/
+input\*

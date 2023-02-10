@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\CGAL_Project\CGALWrapper\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{742B4073-9C9B-3EBE-9180-AB656DBA019E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JSON">
+      <UniqueIdentifier>{ae214c04-a89d-4a65-a96e-f2b6cfa1cdc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CGAL">
+      <UniqueIdentifier>{de42577a-35c4-4e28-9004-338e5182aecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4875069d-9442-40d0-80d2-bd7f8771df0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\JSON">
+      <UniqueIdentifier>{8ed30bc2-e547-4158-8aa0-917690c07d45}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\CGAL_Project\CGALWrapper\mesh_polyhedral_domain_with_surface_inside.cpp">
+      <Filter>Source Files\CGAL</Filter>
+    </ClCompile>
+    <ClCompile Include="CGALWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Products.cpp">
+      <Filter>Source Files\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONBase.cpp">
+      <Filter>Source Files\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>Source Files\JSON</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="JSONBase.h">
+      <Filter>Header Files\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONIncludes.h">
+      <Filter>Header Files\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Header Files\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="Products.h">
+      <Filter>Header Files\JSON</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

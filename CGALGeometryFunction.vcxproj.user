@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>-GetCenterline -path "C:\Nova Files\Git\QueryableModelDataServer\FornaxGen-X\bin\Debug\ExecutableFiles\Skeletonization\input\8MO4OyqyNkqmF8wkEuviKw\input.json" -output "C:\Nova Files\Git\QueryableModelDataServer\FornaxGen-X\bin\Debug\ExecutableFiles\Skeletonization\input\8MO4OyqyNkqmF8wkEuviKw" -site "False" -test "True"</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>-GetCenterline -path "C:\Nova Files\Git\QueryableModelDataServer\GeometryAnalyzer\input\driveway.json" -output "C:\Nova Files\Git\QueryableModelDataServer\GeometryAnalyzer\input\input2_out.json"</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>
