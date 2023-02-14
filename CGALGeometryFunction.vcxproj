@@ -87,7 +87,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -106,10 +106,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CGAL_MESH_3_NO_DEPRECATED_SURFACE_INDEX;CGAL_MESH_3_NO_DEPRECATED_C3T3_ITERATORS;BOOST_ALL_DYN_LINK=1;CGAL_USE_ZLIB=1;CGAL_EIGEN3_ENABLED;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -119,15 +119,6 @@
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>setlocal
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/CGAL_Project/CGALWrapper/build/Debug/mesh_polyhedral_domain_with_surface_inside.exe -installedDir C:/dev/vcpkg/installed/x64-windows/debug/bin -OutVariable out
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\debug\lib\mpir.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libmpfr-4.lib;</AdditionalDependencies>
@@ -135,8 +126,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/CGAL_Project/CGALWrapper/build/Debug/mesh_polyhedral_domain_with_surface_inside.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/CGAL_Project/CGALWrapper/build/Debug/mesh_polyhedral_domain_with_surface_inside.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -145,7 +134,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4503</DisableSpecificWarnings>
@@ -164,10 +153,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CGAL_MESH_3_NO_DEPRECATED_SURFACE_INDEX;CGAL_MESH_3_NO_DEPRECATED_C3T3_ITERATORS;BOOST_ALL_DYN_LINK=1;CGAL_USE_ZLIB=1;CGAL_EIGEN3_ENABLED;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -177,15 +166,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>setlocal
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/CGAL_Project/CGALWrapper/build/Release/mesh_polyhedral_domain_with_surface_inside.exe -installedDir C:/dev/vcpkg/installed/x64-windows/bin -OutVariable out
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\debug\lib\mpir.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libmpfr-4.lib;</AdditionalDependencies>
@@ -193,8 +173,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/CGAL_Project/CGALWrapper/build/Release/mesh_polyhedral_domain_with_surface_inside.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/CGAL_Project/CGALWrapper/build/Release/mesh_polyhedral_domain_with_surface_inside.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -203,7 +181,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4503</DisableSpecificWarnings>
@@ -222,10 +200,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CGAL_MESH_3_NO_DEPRECATED_SURFACE_INDEX;CGAL_MESH_3_NO_DEPRECATED_C3T3_ITERATORS;BOOST_ALL_DYN_LINK=1;CGAL_USE_ZLIB=1;CGAL_EIGEN3_ENABLED;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -235,15 +213,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>setlocal
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/CGAL_Project/CGALWrapper/build/MinSizeRel/mesh_polyhedral_domain_with_surface_inside.exe -installedDir C:/dev/vcpkg/installed/x64-windows/bin -OutVariable out
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\debug\lib\mpir.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libmpfr-4.lib;</AdditionalDependencies>
@@ -251,8 +220,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/CGAL_Project/CGALWrapper/build/MinSizeRel/mesh_polyhedral_domain_with_surface_inside.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/CGAL_Project/CGALWrapper/build/MinSizeRel/mesh_polyhedral_domain_with_surface_inside.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -261,7 +228,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;dependencies\rapidjson;dependencies\auxiliary;</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -279,10 +246,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CGAL_MESH_3_NO_DEPRECATED_SURFACE_INDEX;CGAL_MESH_3_NO_DEPRECATED_C3T3_ITERATORS;BOOST_ALL_DYN_LINK=1;CGAL_USE_ZLIB=1;CGAL_EIGEN3_ENABLED;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;E:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;C:\dev\vcpkg\packages\mpfr_x86-windows\include;C:\dev\vcpkg\installed\x86-windows\include;C:\local\boost_1_78_0;C:\eigen\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -292,15 +259,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>setlocal
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/dev/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/CGAL_Project/CGALWrapper/build/RelWithDebInfo/mesh_polyhedral_domain_with_surface_inside.exe -installedDir C:/dev/vcpkg/installed/x64-windows/bin -OutVariable out
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\debug\lib\mpir.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libmpfr-4.lib;</AdditionalDependencies>
@@ -308,8 +266,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/CGAL_Project/CGALWrapper/build/RelWithDebInfo/mesh_polyhedral_domain_with_surface_inside.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/CGAL_Project/CGALWrapper/build/RelWithDebInfo/mesh_polyhedral_domain_with_surface_inside.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -319,55 +275,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <CustomBuild Include="CMakeLists.txt">
       <StdOutEncoding>UTF-8</StdOutEncoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/CGAL_Project/CGALWrapper/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CGAL_Project/CGALWrapper -BE:/CGAL_Project/CGALWrapper/build --check-stamp-file E:/CGAL_Project/CGALWrapper/build/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule Custom\CMakeLists.txt</Message>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindBoost.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;C:\dev\vcpkg\installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig-installation-dirs.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigBuildVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Common.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_CreateSingleSourceCGALProgram.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Eigen3_support.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_GeneratorSpecificSettings.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Macros.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SCM.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGALDependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGAL_ImageIODependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupVLD.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_TweakFindBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_VersionUtils.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_add_test.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_enable_end_of_configuration_hook.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_setup_target_dependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_target_use_TBB.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindEigen3.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMPXX.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindMPFR.cmake;C:\dev\vcpkg\scripts\buildsystems\vcpkg.cmake;build\CMakeFiles\3.22.0\CMakeCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeCXXCompiler.cmake;build\CMakeFiles\3.22.0\CMakeRCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/CGAL_Project/CGALWrapper/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CGAL_Project/CGALWrapper -BE:/CGAL_Project/CGALWrapper/build --check-stamp-file E:/CGAL_Project/CGALWrapper/build/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule Custom\CMakeLists.txt</Message>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindBoost.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;C:\dev\vcpkg\installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig-installation-dirs.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigBuildVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Common.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_CreateSingleSourceCGALProgram.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Eigen3_support.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_GeneratorSpecificSettings.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Macros.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SCM.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGALDependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGAL_ImageIODependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupVLD.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_TweakFindBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_VersionUtils.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_add_test.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_enable_end_of_configuration_hook.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_setup_target_dependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_target_use_TBB.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindEigen3.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMPXX.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindMPFR.cmake;C:\dev\vcpkg\scripts\buildsystems\vcpkg.cmake;build\CMakeFiles\3.22.0\CMakeCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeCXXCompiler.cmake;build\CMakeFiles\3.22.0\CMakeRCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/CGAL_Project/CGALWrapper/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CGAL_Project/CGALWrapper -BE:/CGAL_Project/CGALWrapper/build --check-stamp-file E:/CGAL_Project/CGALWrapper/build/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule Custom\CMakeLists.txt</Message>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindBoost.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;C:\dev\vcpkg\installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig-installation-dirs.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigBuildVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Common.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_CreateSingleSourceCGALProgram.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Eigen3_support.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_GeneratorSpecificSettings.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Macros.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SCM.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGALDependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGAL_ImageIODependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupVLD.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_TweakFindBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_VersionUtils.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_add_test.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_enable_end_of_configuration_hook.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_setup_target_dependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_target_use_TBB.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindEigen3.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMPXX.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindMPFR.cmake;C:\dev\vcpkg\scripts\buildsystems\vcpkg.cmake;build\CMakeFiles\3.22.0\CMakeCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeCXXCompiler.cmake;build\CMakeFiles\3.22.0\CMakeRCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/CGAL_Project/CGALWrapper/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SE:/CGAL_Project/CGALWrapper -BE:/CGAL_Project/CGALWrapper/build --check-stamp-file E:/CGAL_Project/CGALWrapper/build/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule Custom\CMakeLists.txt</Message>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindBoost.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;C:\dev\vcpkg\installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig-installation-dirs.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfig.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigBuildVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGALConfigVersion.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Common.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_CreateSingleSourceCGALProgram.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Eigen3_support.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_GeneratorSpecificSettings.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_Macros.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SCM.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGALDependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupCGAL_ImageIODependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_SetupVLD.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_TweakFindBoost.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_VersionUtils.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_add_test.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_enable_end_of_configuration_hook.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_setup_target_dependencies.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\CGAL_target_use_TBB.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindEigen3.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMP.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindGMPXX.cmake;C:\dev\vcpkg\installed\x86-windows\share\cgal\FindMPFR.cmake;C:\dev\vcpkg\scripts\buildsystems\vcpkg.cmake;build\CMakeFiles\3.22.0\CMakeCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeCXXCompiler.cmake;build\CMakeFiles\3.22.0\CMakeRCCompiler.cmake;build\CMakeFiles\3.22.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
