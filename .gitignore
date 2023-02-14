@@ -43,3 +43,7 @@ build\dir\mesh_polyhedral_domain_with_surface_inside.dir\Debug\*
 build\mesh_polyhedral_domain_with_surface_inside.dir\Release\*.lo
 mesh_polyhedral_domain_with_surface_inside.dir/
 input\*
+eigen/
+eigen/
+eigen/
+build/Debug/
