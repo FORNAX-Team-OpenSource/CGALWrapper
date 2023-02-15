@@ -35,7 +35,6 @@ int main123(int argc, char* argv[])
     std::cout.precision(17);
     std::cerr.precision(17);
     const char* fname = (argc > 2) ? argv[2] : "../../data/horizons-output.off";
-    //std::ifstream input(fname);
     const char* fname2 = (argc > 1) ? argv[1] : "../../data/horizons-domain.off";
     std::ifstream input2(fname2);
     Polyhedron  smbounding;

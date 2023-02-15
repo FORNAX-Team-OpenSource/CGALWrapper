@@ -265,7 +265,6 @@ Polyhedron RemeshPolyhedron(MeshPolyhedron meshPolyhedron, double edgeSize = 0.0
 }
 
 std::vector<SM> Segmentation(MeshPolyhedron poly) {
-    //try {
         cout << "SEGMENTATION" << endl;
         SM mesh;
         CGAL::copy_face_graph(poly, mesh);
@@ -285,23 +284,14 @@ std::vector<SM> Segmentation(MeshPolyhedron poly) {
         std::size_t number_of_segments = CGAL::segmentation_from_sdf_values(mesh, sdf_property_map, segment_property_map);
 
         typedef CGAL::Face_filtered_graph<SM> Filtered_graph;
-        //print area of each segment and then put it in a Mesh and print it in an OFF file
         Filtered_graph segment_mesh(mesh);
         std::vector<SM> polyhedronResult;
         for (std::size_t id = 0; id < number_of_segments; ++id)
         {
             segment_mesh.set_selected_faces(id, segment_property_map);
-            //std::cout << "Segment " << id << "'s area is : " << CGAL::Polygon_mesh_processing::area(segment_mesh) << std::endl;
             SM result;
 
             CGAL::copy_face_graph(segment_mesh, result);
-
- /*           std::ostringstream oss;
-            oss << "Segment_" << id << ".off";
-            std::ofstream os(oss.str().data());
-            os << result;*/
-
-
             polyhedronResult.push_back(result);
         }
         cout << polyhedronResult.size() << endl;
@@ -310,16 +300,6 @@ std::vector<SM> Segmentation(MeshPolyhedron poly) {
         }
         cout << "SEGMENTATION DONE"  << endl;
         return polyhedronResult;
-
-    //}
-   /* catch (const std::exception& e) {
-        std::cout << e.what();
-        SM mesh;
-        CGAL::copy_face_graph(poly, mesh);
-        std::vector<SM> outputPoly;
-        outputPoly.push_back(mesh);
-        return outputPoly;
-    }*/
 }
 
 
@@ -327,9 +307,8 @@ std::vector<std::vector<Point>> SkelAllPts;
 std::vector<Point> SkelSegment;
 struct Display_polylines {
     const Skeleton& skeleton;
-    //std::ofstream& out;
-    Display_polylines(const Skeleton& skeleton)//, std::ofstream& out)
-        : skeleton(skeleton) {}//, out(out){}
+    Display_polylines(const Skeleton& skeleton)
+        : skeleton(skeleton) {}
     void start_new_polyline() {}
     void add_node(Skeleton_vertex v) {
         SkelSegment.push_back(skeleton[v].point);
@@ -344,8 +323,6 @@ struct Display_polylines {
 JSONModels::Polylines SkeletonizePolyhedron(Polyhedron tmesh) {
     try {
         JSONModels::Polylines result;
-        //CGAL::Timer t;
-        //t.start();
         if (!CGAL::is_triangle_mesh(tmesh))
         {
             std::cout << "Input geometry is not triangulated." << std::endl;
@@ -370,10 +347,8 @@ JSONModels::Polylines SkeletonizePolyhedron(Polyhedron tmesh) {
                 p.Z(seg[i].z());
                 pLine.PointList().push_back(p);
             }
-            //pLine.SerializeToFile("Path.json");
             result.PolylineList().push_back(pLine);
         }
-        //std::cerr << t.time() << " sec. Skeletonization " << std::endl;
         return result;
     }
     catch (const std::exception& e) {
@@ -386,8 +361,6 @@ JSONModels::Polylines SkeletonizePolyhedron(Polyhedron tmesh) {
 void GeneratePolyhedron(tuple <vector<int>, vector<double>> verticesAndIndices, std::string outputName = "output.json") {
     vector<int> indices = get<0>(verticesAndIndices);
     vector<double> vertices = get<1>(verticesAndIndices);
-    //std::cout << "DITO" << std::endl;
-    //std::cout << outputName << std::endl;
     vector<JSONModels::Point> points;
     cout << outputName << " OUTPUT NAME" << endl;
 
@@ -406,8 +379,6 @@ void GeneratePolyhedron(tuple <vector<int>, vector<double>> verticesAndIndices, 
     {
         vector<JSONModels::Polygon> polygons;
         JSONModels::Face face;
-        /*for (size_t i = 0; i < indices.size() / 3; i++)
-        {*/
             JSONModels::Polygon polygon;
             vector<JSONModels::Point> outputPoints;
             outputPoints.push_back(points[indices[i]]);
@@ -415,15 +386,10 @@ void GeneratePolyhedron(tuple <vector<int>, vector<double>> verticesAndIndices, 
             outputPoints.push_back(points[indices[i + 2]]);
             polygon.PointsList(outputPoints);
             polygons.push_back(polygon);
-        //}
         face.PolygonList(polygons);
         faces.push_back(face);
     }
     polyhedron.FaceList(faces);
-    //JSONModels::Polyhedrons polyhedrons;
-    //polyhedrons.PolyhedronList().push_back(polyhedron);
-    //polyhedrons.SerializeToFile(outputName);
-    //cout << polyhedron.FaceList().size() << endl;
     polyhedron.SerializeToFile(outputName);
 }
 
@@ -435,7 +401,6 @@ tuple<vector<int>, vector<double>> GetIndicesAndVerticesFromCGALPoly(Polyhedron 
         overallVector.push_back(v->point().x());
         overallVector.push_back(v->point().y());
         overallVector.push_back(v->point().z());
-        //std::cout << v->point().x() << " " << v->point().y() << " " << v->point().z() << std::endl;
     }
 
     for (Facet_iterator i = P.facets_begin(); i != P.facets_end(); ++i) {
@@ -444,12 +409,8 @@ tuple<vector<int>, vector<double>> GetIndicesAndVerticesFromCGALPoly(Polyhedron 
         CGAL_assertion(CGAL::circulator_size(j) >= 3);
         //std::cout << CGAL::circulator_size(j) << ' ';
         do {
-            //std::cout << std::distance(P.vertices_begin(), j->vertex());
             indices.push_back(std::distance(P.vertices_begin(), j->vertex()));
-            /*auto a = j->vertex()->;
-            std::cout << a << std::endl;*/
         } while (++j != i->facet_begin());
-        //std::cout << std::endl;
     }
     tuple<vector<int>, vector<double>> verticesIndicies(indices, overallVector);
     return verticesIndicies;
@@ -516,26 +477,20 @@ int main(int argc, char* argv[]) {
             outputPath = argv[i + 1];
         }
         else if (strcmp(argv[i], "-site") == 0) {
-            //cout << "SITE" << endl;
             std::string action(argv[i + 1]);
             if (action == "True" || action == "true") {
-                //cout << "TRUEEE" << endl;
                 isSite = true;
             }
             else {
-                //cout << "falsess" << endl;
                 isSite = false;
             }
         }
         else if (strcmp(argv[i], "-test") == 0) {
-            //cout << "SITE" << endl;
             std::string action(argv[i + 1]);
             if (action == "True" || action == "true") {
-                //cout << "TRUEEE" << endl;
                 test = true;
             }
             else {
-                //cout << "falsess" << endl;
                 test = false;
             }
         }
@@ -548,7 +503,6 @@ int main(int argc, char* argv[]) {
         }
         JSONModels::Polyhedron polyhedrons;
         polyhedrons.DeserializeFromFile(inputPath);
-        //cout << polyhedrons.FaceList().size() << " SIZE" << endl;
         CGAL::Timer t;
         t.start();
         cout << "Start getting vertices and indices" << endl;
@@ -562,54 +516,19 @@ int main(int argc, char* argv[]) {
             JSONModels::Polylines result;
             std::string strName = std::string(outputPath);
             std::string inputPathstr = std::string(inputPath);
-            //std::cout << inputPathstr << endl;
             std::string s = std::to_string(i);
             strName += "\\segment\\" + s + ".json";
-            /*MeshPolyhedron mPh;
-            CGAL::copy_face_graph(segmentResult[i], mPh);
-            Polyhedron remeshed = RemeshPolyhedron(mPh);*/
-
-            //CGAL::copy_face_graph(segment_mesh, result);
-
-            //std::string off = std::to_string(i);
-            //off += "\\segment\\" + s + ".off";
-
-            //std::cout << off << endl;
             SM meshSM;
-
-            //std::ostringstream oss;
-            //oss << off;
-
-
-
-
             CGAL::copy_face_graph(p, meshSM);
             Polyhedron seg;
             CGAL::copy_face_graph(meshSM, seg);
             GeneratePolyhedron(GetIndicesAndVerticesFromCGALPoly(seg), strName);
 
             double volume = CGAL::Polygon_mesh_processing::volume(meshSM);
-            //cout << volume << " VOLUME " << endl;
             double sizeFace = 0;
-       /*     if (volume < .1) {
-                sizeFace = .01;
-            }
-            else if (volume >= .1 && volume <= 5) {
-                sizeFace = .05;
-            }
-            else if (volume >= 5 && volume <= 10) {
-                sizeFace = .025;
-            }
-            else if (volume >= 10 && volume <= 100) {
-                sizeFace = .5;
-            }
-            else if (volume >= 100) {
-                sizeFace = 1;
-            }*/
             sizeFace = volume / 100;
             cout << volume << " Volume" << endl;
             cout << sizeFace << " SIZE OF FACE" << endl;
-            //sizeFace = .1;
             if (sizeFace < 0.001) {
                 sizeFace = .009;
             }
@@ -618,14 +537,12 @@ int main(int argc, char* argv[]) {
 
             JSONModels::Polylines centerLine = SkeletonizePolyhedron(remeshed);
             result.PolylineList().insert(result.PolylineList().end(), centerLine.PolylineList().begin(), centerLine.PolylineList().end());
-            //cout << centerLine.PolylineList().size() << endl;
 
 
             std::string lineStrName = std::string(outputPath);
             lineStrName += "\\centerline\\" + s + ".json";
 
             if (test) {
-                //std::string lineStrName = std::string(outputPath);
                 std::string off = std::string(outputPath);
                 off += "\\segment\\remeshed_" + s + ".off";
                 std::cout << off << endl;
@@ -655,13 +572,9 @@ int main(int argc, char* argv[]) {
                 JSONModels::Polylines result;
                 std::string strName = std::string(outputPath);
                 std::string inputPathstr = std::string(inputPath);
-                //std::cout << inputPathstr << endl;
                 std::string s = std::to_string(i);
                 strName += "\\segment\\" + s + ".json";
-                /*MeshPolyhedron mPh;
-                CGAL::copy_face_graph(segmentResult[i], mPh);
-                Polyhedron remeshed = RemeshPolyhedron(mPh);*/
-
+              
                 SM meshSM;
                 CGAL::copy_face_graph(segmentResult[i], meshSM);
                 Polyhedron seg;
@@ -709,7 +622,6 @@ int main(int argc, char* argv[]) {
                 Polyhedron remeshed = IsotropicRemesh(meshSM, sizeFace);
 
                 if (test) {
-                    //std::string lineStrName = std::string(outputPath);
                     std::string off = std::string(outputPath);
                     off += "\\segment\\remeshed_" + s + ".off";
                     std::cout << off << endl;
